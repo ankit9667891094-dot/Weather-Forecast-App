@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>SkyCast Weather</title>
+
+  <link rel="stylesheet"
+        href="style.css">
+
+</head>
+<body>
+
+
+  <!-- Video Background -->
+  <video autoplay
+         muted
+         loop
+         playsinline
+         id="bgVideo">
+
+    <source
+    src="https://cdn.coverr.co/videos/coverr-clouds-and-blue-sky-1561454253538?download=1080p"
+    type="video/mp4">
+
+  </video>
+
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+
+  <!-- Sun / Moon -->
+  <div class="sky-object"
+       id="skyObject"></div>
+
+
+  <!-- Floating Clouds -->
+  <div class="cloud cloud1"></div>
+
+  <div class="cloud cloud2"></div>
+
+  <div class="cloud cloud3"></div>
+
+
+
+  <div class="container">
+
+    <div class="weather-card">
+
+
+      <!-- Logo -->
+      <div class="logo">
+
+        <img
+        src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png"
+        alt="logo">
+
+        <h1>SkyCast</h1>
+
+      </div>
+
+
+
+      <!-- Time -->
+      <div class="date-time"
+           id="dateTime"></div>
+
+
+
+      <!-- Search -->
+      <div class="search-box">
+
+        <select id="city">
+
+          <option value="">
+            Select City
+          </option>
+
+          <option>Delhi</option>
+          <option>Mumbai</option>
+          <option>Noida</option>
+          <option>Lucknow</option>
+          <option>Kanpur</option>
+          <option>Agra</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Bengaluru</option>
+          <option>Hyderabad</option>
+          <option>Chennai</option>
+          <option>Kolkata</option>
+          <option>Patna</option>
+          <option>Indore</option>
+          <option>Surat</option>
+
+        </select>
+
+        <button onclick="getWeather()">
+          Search
+        </button>
+
+        <button id="micBtn">
+          🎤
+        </button>
+
+        <button onclick="getLocationWeather()">
+          📍
+        </button>
+
+      </div>
+
+
+
+      <!-- Loading -->
+      <div class="loading"
+           id="loading">
+
+        Loading...
+
+      </div>
+
+
+
+      <!-- Weather Info -->
+      <div class="weather-info">
+
+
+        <!-- Weather Image -->
+        <img id="icon"
+             src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png"
+             alt="weather">
+
+
+        <!-- Temp -->
+        <h2>
+
+          <span id="temp">
+            43°C
+          </span>
+
+          <span id="cityName">
+            Delhi
+          </span>
+
+        </h2>
+
+
+        <!-- Description -->
+        <p id="description">
+          Weather
+        </p>
+
+
+
+        <!-- Details -->
+        <div class="details">
+
+
+          <div class="box">
+
+            <h4>Humidity</h4>
+
+            <p id="humidity">
+              5%
+            </p>
+
+          </div>
+
+
+
+          <div class="box">
+
+            <h4>Wind</h4>
+
+            <p id="wind">
+              12 km/h
+            </p>
+
+          </div>
+
+
+
+          <div class="box">
+
+            <h4>Feels Like</h4>
+
+            <p id="feels">
+              44°C
+            </p>
+
+          </div>
+
+
+
+          <div class="box">
+
+            <h4>Pressure</h4>
+
+            <p id="pressure">
+              10 hPa
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Forecast -->
+      <div class="forecast"
+           id="forecast"></div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

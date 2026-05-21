@@ -1,0 +1,503 @@
+/* Reset */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+
+/* Body */
+
+body{
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+/* Video Background */
+
+#bgVideo{
+
+  position:fixed;
+
+  right:0;
+  bottom:0;
+
+  min-width:100%;
+  min-height:100%;
+
+  object-fit:cover;
+
+  z-index:-3;
+}
+
+
+/* Overlay */
+
+.overlay{
+
+  position:fixed;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,0.35);
+
+  z-index:-2;
+
+}
+
+
+/* Main Container */
+
+.container{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:20px;
+}
+
+
+/* Weather Card */
+
+.weather-card{
+
+  width:460px;
+
+  padding:25px;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(15px);
+
+  border:1px solid rgba(255,255,255,0.2);
+
+  color:white;
+
+  box-shadow:0 10px 40px rgba(0,0,0,0.3);
+
+}
+
+
+/* Logo */
+
+.logo{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin-bottom:20px;
+
+}
+
+.logo img{
+
+  width:55px;
+
+}
+
+.logo h1{
+
+  font-size:36px;
+
+  font-weight:bold;
+
+}
+
+
+/* Time */
+
+.date-time{
+
+  text-align:center;
+
+  margin-bottom:20px;
+
+  font-size:18px;
+
+}
+
+
+/* Search */
+
+.search-box{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-bottom:20px;
+
+}
+
+.search-box select{
+
+  flex:1;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:12px;
+
+  outline:none;
+
+  background:white;
+
+}
+
+.search-box button{
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#00b4db;
+
+  color:white;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+.search-box button:hover{
+
+  transform:scale(1.05);
+
+}
+
+
+/* Loading */
+
+.loading{
+
+  display:none;
+
+  text-align:center;
+
+  margin:15px 0;
+
+  font-size:18px;
+
+}
+
+
+/* Weather Info */
+
+.weather-info{
+
+  text-align:center;
+
+}
+
+
+/* Weather Image */
+
+.weather-info img{
+
+  width:140px;
+
+  height:140px;
+
+  object-fit:contain;
+
+  filter:
+  drop-shadow(0 0 15px rgba(255,255,255,0.5));
+
+}
+
+
+/* Temp */
+
+.weather-info h2{
+
+  font-size:65px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:15px;
+
+}
+
+#cityName{
+
+  font-size:30px;
+
+}
+
+
+/* Description */
+
+#description{
+
+  margin-top:10px;
+
+  font-size:22px;
+
+  text-transform:capitalize;
+
+}
+
+
+/* Details */
+
+.details{
+
+  margin-top:25px;
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:15px;
+
+}
+
+.box{
+
+  background:rgba(255,255,255,0.1);
+
+  padding:18px;
+
+  border-radius:15px;
+
+  text-align:center;
+
+  transition:0.3s;
+
+}
+
+.box:hover{
+
+  transform:translateY(-5px);
+
+  background:rgba(255,255,255,0.15);
+
+}
+
+
+/* Forecast */
+
+.forecast{
+
+  margin-top:25px;
+
+  display:grid;
+
+  grid-template-columns:repeat(5,1fr);
+
+  gap:10px;
+
+}
+
+.forecast-item{
+
+  background:rgba(255,255,255,0.1);
+
+  padding:10px;
+
+  border-radius:12px;
+
+  text-align:center;
+
+}
+
+.forecast-item img{
+
+  width:40px;
+
+}
+
+
+/* Floating Clouds */
+
+.cloud{
+
+  position:absolute;
+
+  background:white;
+
+  opacity:0.2;
+
+  border-radius:50px;
+
+  filter:blur(12px);
+
+}
+
+
+/* Cloud 1 */
+
+.cloud1{
+
+  width:220px;
+
+  height:70px;
+
+  top:10%;
+
+  left:-250px;
+
+  animation:moveCloud 35s linear infinite;
+
+}
+
+
+/* Cloud 2 */
+
+.cloud2{
+
+  width:180px;
+
+  height:60px;
+
+  top:30%;
+
+  left:-200px;
+
+  animation:moveCloud 45s linear infinite;
+
+}
+
+
+/* Cloud 3 */
+
+.cloud3{
+
+  width:250px;
+
+  height:80px;
+
+  top:60%;
+
+  left:-300px;
+
+  animation:moveCloud 55s linear infinite;
+
+}
+
+
+/* Cloud Animation */
+
+@keyframes moveCloud{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(1800px);
+  }
+
+}
+
+
+/* Sun / Moon */
+
+.sky-object{
+
+  position:absolute;
+
+  top:60px;
+
+  right:80px;
+
+  width:120px;
+
+  height:120px;
+
+  border-radius:50%;
+
+  animation:rotateSun 20s linear infinite;
+
+}
+
+
+/* Sun */
+
+.sun{
+
+  background:
+  radial-gradient(circle,#ffd700,#ff9900);
+
+  box-shadow:
+  0 0 40px #ffd700,
+  0 0 80px #ff9900;
+
+}
+
+
+/* Moon */
+
+.moon{
+
+  background:
+  radial-gradient(circle,#ddd,#999);
+
+  box-shadow:
+  0 0 30px #ffffff,
+  0 0 60px #cccccc;
+
+}
+
+
+/* Rotation */
+
+@keyframes rotateSun{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+  .weather-card{
+    width:100%;
+  }
+
+  .forecast{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .sky-object{
+
+    width:80px;
+
+    height:80px;
+
+    top:30px;
+
+    right:20px;
+
+  }
+
+}
